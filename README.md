@@ -16,3 +16,10 @@ MYSQL_DBNAME | The name of the database which should be created for Xibo | xibo
 # Running the container
 
 `docker run -p 80:80 -e XIBO_ADMIN_PASS=secret -e MYSQL_PASS=topsecret chimeradev/xibo`
+
+# Data Container
+
+It's a best practice to have data separated from the actual server container. Our Xibo image stores its data in the folder /xibo-data/, which can be mapped into a data container:
+
+`docker create -v /xibo-data --name xibo-data chimeradev/xibo /bin/true && 
+docker run -d --volumes-from xibo-data --name xibo -p 80:80 -e XIBO_ADMIN_PASS=secret -e MYSQL_PASS=topsecret chimeradev/xibo`
