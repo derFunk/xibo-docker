@@ -1,5 +1,6 @@
 # xibo-docker
 Docker container for the Xibo Digital Signage CMS
+Docker Hub repository: https://hub.docker.com/r/chimeradev/xibo-docker/
 
 # Environment variables
 
