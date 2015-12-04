@@ -32,6 +32,7 @@ WORKDIR /app
 ADD https://github.com/xibosignage/xibo-cms/archive/${XIBO_VERSION}.tar.gz xibo.tar.gz
 RUN tar -xvzf xibo.tar.gz --strip 1 
 RUN rm -f xibo.tar.gz
+RUN rm -f install.php
 
 # create data dir for xibo
 RUN mkdir /xibo-data && chown www-data:www-data /xibo-data 
